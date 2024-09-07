@@ -1,13 +1,7 @@
-package tests;
-
-
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
-import javax.swing.*;
-import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -15,9 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class AutomationPracticeForm {
-
-    private File media;
+public class automationPracticeFormTests {
 
     @BeforeAll
     static void beforeAll() {
@@ -28,7 +20,7 @@ public class AutomationPracticeForm {
 
 
     @Test
-    void AutomationPracticeForm() {
+    void automationPracticeFormTest() {
 
         // заполнение формы
         open("/automation-practice-form");
@@ -46,7 +38,7 @@ public class AutomationPracticeForm {
         $(byText("26")).click(); // дата
         $("#subjectsInput").setValue("History").pressEnter(); // предметы
         $(byText("Reading")).click(); //хобби
-        $(By.id("uploadPicture")).uploadFile(new File("src/test/media/testUpload.jpg")); // пикча
+        $("#uploadPicture").uploadFromClasspath("testUpload.jpg"); // пикча
         $("#currentAddress").setValue("Street"); //адрес
         $("#react-select-3-input").setValue("NCR").pressEnter(); // стейт
         $("#react-select-4-input").setValue("Del").pressEnter(); // город
