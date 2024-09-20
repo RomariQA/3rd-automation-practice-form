@@ -3,7 +3,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.TextBox;
 
-public class TextBoxPageObject extends TestBase {
+public class TextBoxPageTests extends TestBase {
     TextBox textBox = new TextBox ();
     String userName = "Alex";
     String userEmail = "alex@egorov.com";
