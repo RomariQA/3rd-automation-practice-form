@@ -1,10 +1,10 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-import pages.TextBox;
+import pages.TextBoxPage;
 
 public class TextBoxPageTests extends TestBase {
-    TextBox textBox = new TextBox ();
+    TextBoxPage textBox = new TextBoxPage();
     String userName = "Alex";
     String userEmail = "alex@egorov.com";
     String userCurrentAddress = "Some street 1";

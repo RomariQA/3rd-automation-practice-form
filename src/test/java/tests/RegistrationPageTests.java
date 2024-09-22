@@ -1,11 +1,11 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-import pages.Registration;
+import pages.RegistrationPage;
 
 public class RegistrationPageTests extends TestBase {
 
-    Registration registration = new Registration();
+    RegistrationPage registrationPage = new RegistrationPage();
     String firstName = "Keks";
     String lastname = "Keksik";
     String email = "Kek@Kek.com";
@@ -25,7 +25,7 @@ public class RegistrationPageTests extends TestBase {
 
     @Test
     void successfulFullRegistrationTest () {
-        registration.openPage()
+        registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastname)
                 .setEmail(email)
@@ -53,7 +53,7 @@ public class RegistrationPageTests extends TestBase {
 
     @Test
     void  successfulRegistrationOnlyRequiresFieldsTest () {
-        registration.openPage()
+        registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastname)
                 .setGender(gender)
@@ -67,7 +67,7 @@ public class RegistrationPageTests extends TestBase {
 
     @Test
     void  unsuccessfulRegistrationWithoutNumberTest () {
-        registration.openPage()
+        registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastname)
                 .setGender(gender)
