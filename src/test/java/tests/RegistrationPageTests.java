@@ -3,32 +3,19 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
+import static tests.RandomTestData.*;
+
+
 public class RegistrationPageTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-    String firstName = "Keks";
-    String lastname = "Keksik";
-    String email = "Kek@Kek.com";
-    String phoneNumber = "0123456789";
-    String gender = "Female";
-    String birthDay = "26";
-    String birthMonth = "August";
-    String birthYear = "1993";
-    String subjects = "History";
-    String hobbies = "Reading";
-    String picture = "testUpload.jpg";
-    String currentAddress = "Street";
-    String state = "NCR";
-    String city = "Delhi";
-
-
 
     @Test
     void successfulFullRegistrationTest () {
         registrationPage.openPage()
                 .setFirstName(firstName)
-                .setLastName(lastname)
-                .setEmail(email)
+                .setLastName(lastName)
+                .setEmail(userEmail)
                 .setGender(gender)
                 .setNumber(phoneNumber)
                 .setBirthDate(birthMonth, birthYear, birthDay)
@@ -39,8 +26,8 @@ public class RegistrationPageTests extends TestBase {
                 .setStateByEnter(state)
                 .setCityByEnter(city)
                 .pressSubmitButton()
-                .checkSuccessfulResults ("Student Name", firstName + " " + lastname)
-                .checkSuccessfulResults ("Student Email", email)
+                .checkSuccessfulResults ("Student Name", firstName + " " + lastName)
+                .checkSuccessfulResults ("Student Email", userEmail)
                 .checkSuccessfulResults ("Gender", gender)
                 .checkSuccessfulResults ("Mobile", phoneNumber)
                 .checkSuccessfulResults ("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
@@ -55,11 +42,11 @@ public class RegistrationPageTests extends TestBase {
     void  successfulRegistrationOnlyRequiresFieldsTest () {
         registrationPage.openPage()
                 .setFirstName(firstName)
-                .setLastName(lastname)
+                .setLastName(lastName)
                 .setGender(gender)
                 .setNumber(phoneNumber)
                 .pressSubmitButton()
-                .checkSuccessfulResults ("Student Name", firstName + " " + lastname)
+                .checkSuccessfulResults ("Student Name", firstName + " " + lastName)
                 .checkSuccessfulResults ("Gender", gender)
                 .checkSuccessfulResults ("Mobile", phoneNumber);
 
@@ -69,7 +56,7 @@ public class RegistrationPageTests extends TestBase {
     void  unsuccessfulRegistrationWithoutNumberTest () {
         registrationPage.openPage()
                 .setFirstName(firstName)
-                .setLastName(lastname)
+                .setLastName(lastName)
                 .setGender(gender)
                 .pressSubmitButton()
                 .checkUnSuccessfulResultsWithoutPhone();
