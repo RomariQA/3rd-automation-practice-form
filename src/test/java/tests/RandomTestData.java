@@ -106,9 +106,4 @@ public class RandomTestData {
             default -> new Faker().options().option("Jaipur", "Jaisalmer");
         };
     }
-
-    public static void main(String[] args) {
-        System.out.println(state);
-        System.out.println(cityForStateRandom(state));
-    }
 }
