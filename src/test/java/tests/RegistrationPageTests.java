@@ -2,17 +2,34 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-
-import static tests.RandomTestData.*;
+import utils.RandomUtils;
 
 
 public class RegistrationPageTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
+    private final RandomUtils randomUtils = new RandomUtils();
+
+    public String
+            firstName = randomUtils.firstNameRandom(),
+            lastName = randomUtils.lastNameRandom(),
+            userEmail = randomUtils.userEmailRandom(),
+            phoneNumber = randomUtils.phoneNumberRandom(),
+            gender = randomUtils.genderRandom(),
+            birthDay = randomUtils.birthDayRandom(),
+            birthMonth = randomUtils.birthMonthRandom(),
+            birthYear = randomUtils.birthYearRandom(),
+            subjects = randomUtils.subjectsRandom(),
+            hobbies = randomUtils.hobbiesRandom(),
+            picture = randomUtils.pictureRandom(),
+            currentAddress = randomUtils.currentAddressRandom(),
+            state = randomUtils.stateRandom(),
+            city = randomUtils.cityForStateRandom(state);
 
     @Test
     void successfulFullRegistrationTest () {
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(userEmail)
