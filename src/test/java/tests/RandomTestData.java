@@ -3,26 +3,6 @@ import com.github.javafaker.Faker;
 
 public class RandomTestData {
 
-
-    //    Testik testik = new Testik();
-//
-//    public String
-//            firstName = testik.firstNameRandom(),
-//            lastName = testik.lastNameRandom(),
-//            userEmail = testik.userEmailRandom(),
-//            gender = testik.genderRandom(),
-//            phoneNumber = testik.phoneNumberRandom(),
-//            birthMonth = testik.birthMonthRandom(),
-//            birthYear = testik.birthYearRandom(),
-//            birthDay = testik.birthDayRandom(),
-//            currentAddress = testik.currentAddressRandom(),
-//            subjects = testik.subjectsRandom(),
-//            hobbies = testik.hobbiesRandom(),
-//            picture = testik.pictureRandom(),
-//            state = testik.stateRandom(),
-//            city = testik.cityForStateRandom(state);
-
-
     public static String
             firstName = firstNameRandom(),
             lastName = lastNameRandom(),
