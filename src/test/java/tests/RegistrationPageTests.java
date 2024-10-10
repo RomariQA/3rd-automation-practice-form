@@ -1,10 +1,13 @@
 package tests;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.RandomUtils;
 
-
+@Tag("Страница формы регистрации")
+@DisplayName("Страница формы регистрации")
 public class RegistrationPageTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -26,6 +29,7 @@ public class RegistrationPageTests extends TestBase {
             state = randomUtils.stateRandom(),
             city = randomUtils.cityForStateRandom(state);
 
+    @DisplayName("Успешное заполнение всех полей формы")
     @Test
     void successfulFullRegistrationTest () {
         registrationPage.openPage()
@@ -55,6 +59,7 @@ public class RegistrationPageTests extends TestBase {
                 .checkSuccessfulResults ("State and City", state + " " + city);
     }
 
+    @DisplayName("Успешное заполнение только обязательных полей формы")
     @Test
     void  successfulRegistrationOnlyRequiresFieldsTest () {
         registrationPage.openPage()
@@ -69,6 +74,7 @@ public class RegistrationPageTests extends TestBase {
 
     }
 
+    @DisplayName("Заполнение формы и подтверждение без ввода обязательного номера телефона")
     @Test
     void  unsuccessfulRegistrationWithoutNumberTest () {
         registrationPage.openPage()
