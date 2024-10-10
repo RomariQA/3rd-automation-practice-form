@@ -6,7 +6,7 @@ plugins {
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
-def allureVersion = "2.21.0",
+def allureVersion = "2.19.0",
     selenideVersion = "7.4.2"
 
 allure {
