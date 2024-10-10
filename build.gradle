@@ -3,23 +3,8 @@ plugins {
     id 'io.qameta.allure' version '2.12.0'
 }
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation (
-            "com.codeborne:selenide:7.0.2",
-            "org.junit.jupiter:junit-jupiter:5.9.3",
-            'com.github.javafaker:javafaker:1.0.2',
-            'org.slf4j:slf4j-simple:2.0.16',
-            "io.qameta.allure:allure-selenide:2.29.0"
-    )
-}
-
-compileTestJava {
-    options.encoding = 'UTF-8'
-}
+group = 'org.example'
+version = '1.0-SNAPSHOT'
 
 allure {
     report {
@@ -33,6 +18,22 @@ allure {
             }
         }
     }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter:5.11.1",
+            "com.codeborne:selenide:7.4.2",
+            "commons-io:commons-io:2.15.0",
+            "org.assertj:assertj-core:3.26.3",
+            'io.qameta.allure:allure-selenide:2.19.0',
+            'org.slf4j:slf4j-simple:2.0.16',
+            'com.github.javafaker:javafaker:1.0.2',
+    )
 }
 
 tasks.withType(Test) {

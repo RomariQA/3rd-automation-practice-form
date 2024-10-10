@@ -24,6 +24,7 @@ public class TestBase {
                 "enableVNC", true,
                 "enableVideo", true
         ));
+
         Configuration.browserCapabilities = capabilities;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
