@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.RandomUtils;
 
-@Tag("Страница формы регистрации")
+@Tag("registrationTest")
 @DisplayName("Страница формы регистрации")
 public class RegistrationPageTests extends TestBase {
 

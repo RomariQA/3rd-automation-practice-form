@@ -46,8 +46,8 @@ tasks.withType(Test) {
     }
 }
 
-task registration_page_test(type: Test) {
+task registrationTest(type: Test) {
     useJUnitPlatform {
-        includeTags("Страница формы регистрации")
+        includeTags("registrationTest")
     }
 }
