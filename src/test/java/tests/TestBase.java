@@ -31,11 +31,6 @@ public class TestBase {
     }
 
     @AfterEach
-    void closeDriver() {
-        Selenide.closeWebDriver();
-    }
-
-    @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
