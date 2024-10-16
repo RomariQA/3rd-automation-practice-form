@@ -92,7 +92,7 @@ public class RegistrationPage {
 
     @Step("Выбираем хобби")
     public RegistrationPage setHobbies (String value) {
-        $(byText(value)).click();
+        $(byText(value)).scrollTo().click();
 
         return this;
     }
