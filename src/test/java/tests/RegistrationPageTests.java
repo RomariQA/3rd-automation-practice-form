@@ -32,8 +32,7 @@ public class RegistrationPageTests extends TestBase {
     @DisplayName("Успешное заполнение всех полей формы")
     @Test
     void successfulFullRegistrationTest () {
-        registrationPage.openPage()
-                .removeBanner()
+        registrationPage
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(userEmail)
@@ -62,7 +61,7 @@ public class RegistrationPageTests extends TestBase {
     @DisplayName("Успешное заполнение только обязательных полей формы")
     @Test
     void  successfulRegistrationOnlyRequiresFieldsTest () {
-        registrationPage.openPage()
+        registrationPage
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setGender(gender)
@@ -77,7 +76,7 @@ public class RegistrationPageTests extends TestBase {
     @DisplayName("Заполнение формы и подтверждение без ввода обязательного номера телефона")
     @Test
     void  unsuccessfulRegistrationWithoutNumberTest () {
-        registrationPage.openPage()
+        registrationPage
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setGender(gender)
