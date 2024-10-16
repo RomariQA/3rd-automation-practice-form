@@ -121,6 +121,7 @@ public class RegistrationPage {
     @Step("Выбираем город штата")
     public RegistrationPage setCityByEnter (String value) {
         cityInput.setValue(value).pressEnter();
+        sleep(5000);
 
         return this;
     }
