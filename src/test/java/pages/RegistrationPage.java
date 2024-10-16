@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import pages.components.CalendarComponent;
 
+import javax.swing.*;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -128,7 +130,7 @@ public class RegistrationPage {
 
     @Step("Кликаем на кнопку сабмита")
     public RegistrationPage pressSubmitButton () {
-        submitButton.click();
+        submitButton.scrollTo().click();
 
         return this;
     }
