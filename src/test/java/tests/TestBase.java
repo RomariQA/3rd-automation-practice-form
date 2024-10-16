@@ -10,6 +10,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 public class TestBase {
 
     @BeforeAll
@@ -35,9 +37,12 @@ public class TestBase {
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
+        if (!Configuration.browser.equals("firefox")) {
+            Attach.pageSource();
+            Attach.browserConsoleLogs();
+        }
         Attach.addVideo();
+        closeWebDriver();
     }
 }
 
